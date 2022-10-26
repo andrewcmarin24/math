@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+public class TestMystery {
+ public static void main(String[] args) {
+   
+ mystery2(1);
+ mystery2(2);
+ mystery2(3);
+ mystery2(4);
+ mystery2(16);
+ mystery2(30);
+ mystery2(100);
+ } 
+ 
+ public static int mystery(int x, int y) {
+ if (x % 2 == 1 || y % 2 == 1) {
+ return 1;
+ } else {
+ return 2 * mystery(x / 2, y / 2);
+ }
+ }
+ 
+ public static int mystery1(int x, int y) {
+ if (x < y)
+ return x;
+ else
+ return mystery1(x - y, y);
+}
+ 
+ public static void mystery2(int n) {
+ if (n <= 1)
+ System.out.print(n);
+ else {
+ mystery2(n / 2);
+ System.out.print(", " + n);
+ }
+ }
+} 
